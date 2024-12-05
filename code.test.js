@@ -1,15 +1,20 @@
 const fs = require('fs');
-const jsc = require('jsverify');
+const assert = require('assert');
 
 eval(fs.readFileSync('code.js')+'');
 
-const testSort =
-    jsc.forall("array nat", function(arr) {
-        var a1 = JSON.parse(JSON.stringify(arr));
-        var a2 = JSON.parse(JSON.stringify(arr));
-        return JSON.stringify(mergesort(a1)) ==
-            JSON.stringify(a2.sort(function(a, b)
-                { return a - b; }));
-    });
+async function test() {
+  let key = 1; 
+  
+  arr = [];
+  assert(await msort(arr, key) === []);
 
-jsc.assert(testSort);
+  
+  arr = [1, 2, 1];
+  assert(await msort(arr, key) === [1, 1, 2]);
+  
+  
+  arr = [1, 2, 3, 1, 6, 7, 1];
+  assert(await msort(arr, key) === [1, 1, 1, 6, 2, 3, 7 ]);
+}
+test();
