@@ -55,7 +55,7 @@ Recall that for vanilla mergesort, the time complexity is $\Theta (n \log n)$. T
 
 My implementation processes every subarray of size $k$ in parallel (provided capability for the parallel processes), so this implementation is able to replace the factor of $n$ in the time complexity with a constant factor, leaving a time complexity of $\Theta (n \log n)$. This can also be seen because the DAG of the program is $\log n$.
 
-The work done still remains the same at $\Theta (n \log n)$; however, it is still doing the same amount of work.
+The work done still remains the same at $\Theta (n \log n)$ because it's still doing the same amount of work though.
 
 
 I started off by copying the recursive mergesort code from the slides and then using the async library to implement parallelism.  
