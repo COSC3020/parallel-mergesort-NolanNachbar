@@ -53,7 +53,7 @@ function merge(x, lo, mid, hi, tmp) {
 
 Recall that for vanilla mergesort, the time complexity is $\Theta (n \log n)$. This is because you are breaking the array into $\log n$ sizes of subarrays and going through the array $n$ at each of those array sizes. Hence, you multiple and get $\Theta (n \log n)$. 
 
-My implementation processes every subarray of size $k$ in parallel (provided capability for the parallel processes), so with this implementation, the span is $\log n$. Because of the merging process which is $\Theta(n)$ at $\log n$ levels, the time complexity is still $\Theta (n \log n)$. 
+My implementation processes every subarray of size $k$ in parallel (provided capability for the parallel processes), so with this implementation, the span is $\log {n} $. Because of the merging process which is $\Theta(n)$ at $\log {n}$ levels, the time complexity is still $\Theta (n \log {n})$. 
 
 
 I started off by copying the recursive mergesort code from the slides and then using the async library to implement parallelism.  
